@@ -162,4 +162,15 @@ class DrinkController extends Controller
 
         return redirect()->route('Drinks.index');
     }
+
+    public function filter($filter)
+    {
+        $drinks = Drink::where('drink_type', $filter)
+            ->paginate(5);
+
+        return view('admin.drink.browse', [
+            'page_title' => 'Drinks',
+            'drinks' => $drinks
+        ]);
+    }
 }

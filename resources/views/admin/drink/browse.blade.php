@@ -1,4 +1,27 @@
 @extends("partials.admin.master")
+
+@section('extra-css')
+<style>
+    .float-left {
+        float: left;
+    }
+
+    .float-right {
+        float: right;
+    }
+
+    .filters {
+        cursor: pointer;
+    }
+
+    .no-drinks {
+        text-align: center;
+        margin: 20px;
+    }
+
+</style>
+@endsection
+
 @section("content")
 
 @include("partials.admin.page-header",
@@ -11,9 +34,19 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header d-block">
-                <h3>Drinks</h3>
+                <h3 class="float-left">Drinks</h3>
+                <div class="float-right">
+                    <h3 class="float-left mr-4">Filter: </h3>
+                    <a href="{{route('Drinks.index.filter', 'Water')}}"><span
+                            class="badge badge-info filters">Water</span></a>
+                    <a href="{{route('Drinks.index.filter', 'Soda')}}"><span
+                            class="badge badge-success filters">Soda</span></a>
+                    <a href="{{route('Drinks.index.filter', 'Juice')}}"><span
+                            class="badge badge-dark filters">Juice</span></a>
+                </div>
             </div>
             <div class="card-body p-0 table-border-style">
+                @if(count($drinks) > 0)
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -59,6 +92,11 @@
                     {{ $drinks->links() }}
 
                 </div>
+                @else
+                <div class="container no-drinks">
+                    <h3>(0) items available in this type!</h3>
+                </div>
+                @endif
             </div>
         </div>
     </div>

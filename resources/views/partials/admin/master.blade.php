@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{asset("assets/plugins/owl.carousel/dist/assets/owl.carousel.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/plugins/owl.carousel/dist/assets/owl.theme.default.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/dist/css/theme.min.css")}}">
+    @yield('extra-css')
     <script src="{{asset("assets/src/js/vendor/modernizr-2.8.3.min.js")}}"></script>
 </head>
 

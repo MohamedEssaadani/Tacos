@@ -31,6 +31,7 @@ Route::patch('/tacos-update/{tacos}', 'TacosController@update')->name('Tacos.upd
 
 //Drinks
 Route::get('/drinks', 'DrinkController@index')->name('Drinks.index');
+Route::get('/drinks/{filter}', 'DrinkController@filter')->name('Drinks.index.filter');
 Route::get('/create-drink', 'DrinkController@create')->name('Drinks.create');
 Route::get('/drink-destroy/{drink}', 'DrinkController@destroy')->name('Drinks.destroy');
 Route::get('/drink/{id}', 'DrinkController@show')->name('Drinks.show');

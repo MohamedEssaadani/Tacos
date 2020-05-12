@@ -18,13 +18,10 @@ class TacosController extends Controller
 
         $tacosList = Tacos::paginate(5);
 
-        if ($tacosList->count() > 0)
-            return view('admin.tacos.browse', [
-                'page_title' => $page_title,
-                'tacosList' => $tacosList
-            ]);
-        else
-            return redirect()->route('Dashboard');
+        return view('admin.tacos.browse', [
+            'page_title' => $page_title,
+            'tacosList' => $tacosList
+        ]);
     }
 
     /**

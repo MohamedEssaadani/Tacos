@@ -5,6 +5,16 @@
 'item_route' =>'/tacos'
 ])
 
+@section('extra-css')
+<style>
+    .no-drinks {
+        text-align: center;
+        margin: 20px;
+    }
+
+</style>
+@endsection
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -12,6 +22,7 @@
                 <h3>Tacos</h3>
             </div>
             <div class="card-body p-0 table-border-style">
+                @if(count($tacosList) > 0)
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -52,8 +63,12 @@
                         </tbody>
                     </table>
                     {{ $tacosList->links() }}
-
                 </div>
+                @else
+                <div class="container no-drinks">
+                    <h3>(0) items available!</h3>
+                </div>
+                @endif
             </div>
         </div>
     </div>
