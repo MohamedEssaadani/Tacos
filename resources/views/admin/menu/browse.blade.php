@@ -46,9 +46,11 @@
                                 </td>
                                 <td>
                                     <div class="table-actions">
-                                        <a href=""><i class="ik ik-eye text-blue"></i></a>
+                                        <a href="{{route('Menus.show', $menu->menu_id)}}"><i
+                                                class="ik ik-eye text-blue"></i></a>
                                         <a href=""><i class="ik ik-edit-2 text-green"></i></a>
-                                        <a href="" onclick="return confirm('Are you sure to delete this item?');"><i
+                                        <a href="{{route('Menus.destroy', $menu->menu_id)}}"
+                                            onclick="return confirm('Are you sure to delete this item?');"><i
                                                 class="ik ik-trash-2 text-red"></i></a>
                                     </div>
                                 </td>

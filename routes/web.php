@@ -42,4 +42,6 @@ Route::patch('/drink-update/{drink}', 'DrinkController@update')->name('Drinks.up
 //Menus
 Route::get('/menus', 'MenuController@index')->name('Menus.index');
 Route::get('/menu-create', 'MenuController@create')->name('Menus.create');
+Route::get('/menu/{id}', 'MenuController@show')->name('Menus.show');
+Route::get('/menu-destroy/{id}', 'MenuController@destroy')->name('Menus.destroy');
 Route::post('/menu-store', 'MenuController@store')->name('Menus.store');
