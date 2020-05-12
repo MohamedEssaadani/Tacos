@@ -44,4 +44,5 @@ Route::get('/menus', 'MenuController@index')->name('Menus.index');
 Route::get('/menu-create', 'MenuController@create')->name('Menus.create');
 Route::get('/menu/{id}', 'MenuController@show')->name('Menus.show');
 Route::get('/menu-destroy/{id}', 'MenuController@destroy')->name('Menus.destroy');
+Route::get('/menu-edit/{id}', 'MenuController@edit')->name('Menus.edit');
 Route::post('/menu-store', 'MenuController@store')->name('Menus.store');

@@ -96,15 +96,13 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-        $menu = Menu::find($id);
-        $tacos = Tacos::find($menu->tacos_id);
-        $drink = Drink::find($menu->drink_id);
+        $menuInfos = $this->getMenu($id);
 
         return view('admin.menu.read', [
             'page_title' => 'Show Menu',
-            'menu' => $menu,
-            'tacos' => $tacos,
-            'drink' => $drink
+            'menu' => $menuInfos['menu'],
+            'tacos' => $menuInfos['tacos'],
+            'drink' => $menuInfos['drink']
         ]);
     }
 
@@ -116,7 +114,18 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $menuInfos = $this->getMenu($id);
+        $tacosItems = Tacos::all();
+        $drinks = Drink::all();
+
+        return view('admin.menu.edit', [
+            'page_title' => 'Edit Menu',
+            'menu' => $menuInfos['menu'],
+            'menu_tacos' => $menuInfos['tacos'],
+            'menu_drink' => $menuInfos['drink'],
+            'tacosItems' => $tacosItems,
+            'drinks' => $drinks
+        ]);
     }
 
     /**
@@ -143,5 +152,14 @@ class MenuController extends Controller
         Menu::destroy($id);
 
         return redirect()->route('Menus.index');
+    }
+
+    public function getMenu($id)
+    {
+        $menuInfos['menu'] = Menu::find($id);
+        $menuInfos['tacos'] = Tacos::find($menuInfos['menu']->tacos_id);
+        $menuInfos['drink'] = Drink::find($menuInfos['menu']->drink_id);
+
+        return $menuInfos;
     }
 }

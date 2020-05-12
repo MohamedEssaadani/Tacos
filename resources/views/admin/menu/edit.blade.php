@@ -4,7 +4,7 @@
 
 @include("partials.admin.page-header",
 [
-'page_header_title' => 'Add Menu',
+'page_header_title' => 'Edit Menu',
 'item'=> 'Menus',
 'item_route' =>'/menus'
 ])
@@ -26,7 +26,7 @@
                                 <span class="input-group-prepend">
                                     <label class="input-group-text"><i class="ik ik-file-text"></i></label>
                                 </span>
-                                <input type="text" name="menu_name" value="{{old('menu_name')}}" class="form-control"
+                                <input type="text" name="menu_name" value="{{$menu->menu_name}}" class="form-control"
                                     required>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                     <select name="tacos_id" class="form-control" required>
                                         <option value="">--Choose Tacos--</option>
                                         @foreach ($tacosItems as $tacos )
-                                        @if($tacos->tacos_id == old('tacos_id'))
+                                        @if($tacos->tacos_id == $menu_tacos->tacos_id)
                                         <option value="{{$tacos->tacos_id}}" selected>{{$tacos->tacos_name}}</option>
                                         @else
                                         <option value="{{$tacos->tacos_id}}">{{$tacos->tacos_name}}</option>
@@ -65,7 +65,7 @@
                                     <select name="drink_id" class="form-control" required>
                                         <option value="">--Choose Drink--</option>
                                         @foreach ($drinks as $drink )
-                                        @if($drink->drink_id == old('drink_id'))
+                                        @if($drink->drink_id == $menu_drink->drink_id)
                                         <option value="{{$drink->drink_id}}" selected>{{$tacos->tacos_name}}</option>
                                         @else
                                         <option value="{{$drink->drink_id}}">{{$drink->drink_name}}</option>
@@ -83,7 +83,7 @@
                                 <span class="input-group-prepend">
                                     <label class="input-group-text"><i class="ik ik-file-text"></i></label>
                                 </span>
-                                <input type="text" name="menu_price" value="{{old('menu_price')}}" class="form-control"
+                                <input type="text" name="menu_price" value="{{$menu->menu_price}}" class="form-control"
                                     required>
                             </div>
                         </div>
@@ -91,13 +91,18 @@
                         <label class="col-sm-4 col-lg-4 col-form-label">Fries</label>
                         <div class="col-sm-8 col-lg-8">
                             <label class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="fries" id="fries" checked>
+                                <input type="checkbox" class="custom-control-input" name="fries" id="fries"
+                                    {{ ($menu->with_frite ? "checked" : !"checked") }}>
                                 <span class="custom-control-label" style="cursor: pointer;">&nbsp; Remember Me</span>
                             </label>
                         </div>
 
-                        <label class="col-sm-4 col-lg-4 col-form-label">Drink Image</label>
-                        <input type="file" name="image" accept="image/*" class="col-sm-8 col-lg-8 " />
+                        <label class="col-sm-4 col-lg-4 col-form-label">Menu Image</label>
+                        <div class="col-sm-8 col-lg-8 ">
+                            <input type="file" name="menu_image" accept="image/*" /> <br>
+                            <img src="{{asset('assets/img/menus/'.$menu->image)}}" alt="{{$menu->ima}}"
+                                style="height:200px; width:200px;">
+                        </div>
                     </div>
                     <button class="btn btn-success" style="float:right;"><i class="ik ik-save"></i> Save</button>
                 </form>

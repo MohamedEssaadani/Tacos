@@ -25,7 +25,7 @@
                                 <th>Price</th>
                                 <th>Fries</th>
                                 <th>Image</th>
-                                <th class="nosort"><a href="{{route('Drinks.create')}}" class="text-green"
+                                <th class="nosort"><a href="{{route('Menus.create')}}" class="text-green"
                                         style="float:right;"><i class="ik ik-plus-circle text-green"></i>
                                         New</a>
                                 </th>
@@ -48,7 +48,8 @@
                                     <div class="table-actions">
                                         <a href="{{route('Menus.show', $menu->menu_id)}}"><i
                                                 class="ik ik-eye text-blue"></i></a>
-                                        <a href=""><i class="ik ik-edit-2 text-green"></i></a>
+                                        <a href="{{route('Menus.edit', $menu->menu_id)}}"><i
+                                                class="ik ik-edit-2 text-green"></i></a>
                                         <a href="{{route('Menus.destroy', $menu->menu_id)}}"
                                             onclick="return confirm('Are you sure to delete this item?');"><i
                                                 class="ik ik-trash-2 text-red"></i></a>
