@@ -46,3 +46,4 @@ Route::get('/menu/{id}', 'MenuController@show')->name('Menus.show');
 Route::get('/menu-destroy/{id}', 'MenuController@destroy')->name('Menus.destroy');
 Route::get('/menu-edit/{id}', 'MenuController@edit')->name('Menus.edit');
 Route::post('/menu-store', 'MenuController@store')->name('Menus.store');
+Route::patch('/menu-update', 'MenuController@update')->name('Menus.update');

@@ -90,7 +90,7 @@
     <script src="{{asset("assets/dist/js/theme.min.js")}}"></script>
     <script src="/js/app.js"></script>
 
-
+    @yield('extra-js')
 </body>
 
 </html>

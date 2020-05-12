@@ -77,9 +77,10 @@
 
                         <label class="col-sm-4 col-lg-4 col-form-label">Drink Image</label>
                         <div class="col-sm-8 col-lg-8 ">
-                            <input type="file" name="drink_image" accept="image/*" /> <br>
-                            <img src="{{asset('assets/img/drinks/'.$drink->drink_image)}}" alt="{{$drink->drink_image}}"
-                                style="height:200px; width:200px;">
+                            <input type="file" name="drink_image" accept="image/*" onchange="onImageSelected(event)" />
+                            <br>
+                            <img src="{{asset('assets/img/drinks/'.$drink->drink_image)}}" id="img"
+                                alt="{{$drink->drink_image}}" style="height:200px; width:200px;">
                         </div>
                     </div>
                     <button class="btn btn-success" style="float:right;"><i class="ik ik-save"></i> Save</button>
@@ -89,4 +90,22 @@
     </div>
 </div>
 
+@endsection
+
+@section('extra-js')
+<script>
+    function onImageSelected(event) {
+        var selectedImage = event.target.files[0];
+        var reader = new FileReader();
+
+        var img = document.getElementById("img");
+        img.title = selectedImage.name;
+
+        reader.onload = function(event) {
+        img.src = event.target.result;
+        };
+
+        reader.readAsDataURL(selectedImage);
+        }
+</script>
 @endsection

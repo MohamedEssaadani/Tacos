@@ -84,7 +84,7 @@ class MenuController extends Controller
 
         Menu::create($data);
 
-        return redirect()->route('Dashboard');
+        return redirect()->route('Menus.index');
         // $value = ($request->fries == true) ? 'yes' :  'no';
     }
 
@@ -135,9 +135,37 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $imageName = '';
+        $data = $request->validate([
+            'menu_id' => 'required|numeric',
+            'menu_name' => 'required|string|max:50',
+            'tacos_id' => 'required|numeric',
+            'drink_id' => 'required|numeric',
+            'menu_price' => 'required|numeric',
+        ]);
+
+        //check if image changed or not
+        if ($request->menu_image != null) {
+
+            $imageName = time() . '.' . $request->menu_image->extension();
+
+            $request->menu_image->move(public_path('assets/img/menus'), $imageName);
+        }
+
+
+        $menu = Menu::find($request->menu_id);
+        $menu->menu_name = $request->menu_name;
+        $menu->tacos_id = $request->tacos_id;
+        $menu->drink_id = $request->drink_id;
+        $menu->menu_price = $request->menu_price;
+        //if admin change image then the $imageName will be fulfilled then we need to change image name from db, else we keep the old name
+        $menu->image = ($imageName == '') ? $menu->image : $imageName;
+        $menu->with_frite = (isset($request->fries)) ? true : false;
+        $menu->save();
+
+        return redirect()->route('Menus.index');
     }
 
     /**

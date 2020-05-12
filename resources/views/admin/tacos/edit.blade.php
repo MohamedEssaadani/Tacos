@@ -55,8 +55,9 @@
 
                         <label class="col-sm-4 col-lg-4 col-form-label">Tacos Image</label>
                         <div class="col-sm-8 col-lg-8 ">
-                            <input type="file" name="tacos_image" accept="image/*" /> <br>
-                            <img src="{{asset('assets/img/tacos/'.$tacos->image)}}" alt="{{$tacos->image}}"
+                            <input type="file" name="tacos_image" accept="image/*" onchange="onImageSelected(event)" />
+                            <br>
+                            <img src="{{asset('assets/img/tacos/'.$tacos->image)}}" id="img" alt="{{$tacos->image}}"
                                 style="height:200px; width:200px;">
                         </div>
                     </div>
@@ -67,4 +68,22 @@
     </div>
 </div>
 
+@endsection
+
+@section('extra-js')
+<script>
+    function onImageSelected(event) {
+        var selectedImage = event.target.files[0];
+        var reader = new FileReader();
+
+        var img = document.getElementById("img");
+        img.title = selectedImage.name;
+
+        reader.onload = function(event) {
+        img.src = event.target.result;
+        };
+
+        reader.readAsDataURL(selectedImage);
+        }
+</script>
 @endsection

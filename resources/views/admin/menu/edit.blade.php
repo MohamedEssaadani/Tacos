@@ -18,8 +18,9 @@
             <div class="card-body">
                 <form action="{{route('Menus.update')}}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
+                    @method('patch')
                     <div class="row">
-
+                        <input type="hidden" name="menu_id" value="{{$menu->menu_id}}">
                         <label class="col-sm-4 col-lg-4 col-form-label">Menu Name</label>
                         <div class="col-sm-8 col-lg-8">
                             <div class="input-group">
@@ -66,7 +67,7 @@
                                         <option value="">--Choose Drink--</option>
                                         @foreach ($drinks as $drink )
                                         @if($drink->drink_id == $menu_drink->drink_id)
-                                        <option value="{{$drink->drink_id}}" selected>{{$tacos->tacos_name}}</option>
+                                        <option value="{{$drink->drink_id}}" selected>{{$drink->drink_name}}</option>
                                         @else
                                         <option value="{{$drink->drink_id}}">{{$drink->drink_name}}</option>
                                         @endif
@@ -99,8 +100,9 @@
 
                         <label class="col-sm-4 col-lg-4 col-form-label">Menu Image</label>
                         <div class="col-sm-8 col-lg-8 ">
-                            <input type="file" name="menu_image" accept="image/*" /> <br>
-                            <img src="{{asset('assets/img/menus/'.$menu->image)}}" alt="{{$menu->ima}}"
+                            <input type="file" name="menu_image" accept="image/*" onchange="onImageSelected(event)" />
+                            <br>
+                            <img src="{{asset('assets/img/menus/'.$menu->image)}}" id="img" alt="{{$menu->image}}"
                                 style="height:200px; width:200px;">
                         </div>
                     </div>
@@ -111,4 +113,22 @@
     </div>
 </div>
 
+@endsection
+
+@section('extra-js')
+<script>
+    function onImageSelected(event) {
+        var selectedImage = event.target.files[0];
+        var reader = new FileReader();
+
+        var img = document.getElementById("img");
+        img.title = selectedImage.name;
+
+        reader.onload = function(event) {
+        img.src = event.target.result;
+        };
+
+        reader.readAsDataURL(selectedImage);
+        }
+</script>
 @endsection
