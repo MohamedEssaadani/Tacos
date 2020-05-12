@@ -52,7 +52,7 @@ class DrinkController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'drink_name' => 'required|string|max:20',
+            'drink_name' => 'required|string|max:20|unique:drinks',
             'drink_type' => 'required|string|max:20',
             'drink_price' => 'required|numeric',
             'drink_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -120,7 +120,7 @@ class DrinkController extends Controller
     {
         $imageName = '';
         $request->validate([
-            'drink_name' => 'required|string|max:20',
+            'drink_name' => 'required|string|max:20|unique:drinks,drink_name,' . $id . ',drink_id',
             'drink_type' => 'required|string|max:20',
             'drink_price' => 'required|numeric',
         ]);

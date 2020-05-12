@@ -117,7 +117,7 @@ class TacosController extends Controller
     {
         $imageName = '';
         $data = $request->validate([
-            'tacos_name' => 'required|string',
+            'tacos_name' => 'required|string|unique:tacos,tacos_name,' . $id . ',tacos_id',
             'tacos_price' => 'required|numeric',
         ]);
 

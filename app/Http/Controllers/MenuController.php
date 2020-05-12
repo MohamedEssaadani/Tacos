@@ -66,7 +66,7 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'menu_name' => 'required|string|max:50',
+            'menu_name' => 'required|string|max:50|unique:menus',
             'tacos_id' => 'required|numeric',
             'drink_id' => 'required|numeric',
             'menu_price' => 'required|numeric',
@@ -140,7 +140,7 @@ class MenuController extends Controller
         $imageName = '';
         $data = $request->validate([
             'menu_id' => 'required|numeric',
-            'menu_name' => 'required|string|max:50',
+            'menu_name' => 'required|string|max:50|unique:menus,menu_name,' . $request->menu_id . ',menu_id',
             'tacos_id' => 'required|numeric',
             'drink_id' => 'required|numeric',
             'menu_price' => 'required|numeric',
