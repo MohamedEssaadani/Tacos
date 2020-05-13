@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Dashboard
-Route::get('/admin', 'DashboardController@index')->name('Dashboard');
+//Admin Dashboard
+Route::get('/admin', 'DashboardController@login')->name('Admin.auth');
+
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');
+});
 
 //Tacos
 Route::get('/tacos', 'TacosController@index')->name('Tacos.index');
@@ -47,3 +52,7 @@ Route::get('/menu-destroy/{id}', 'MenuController@destroy')->name('Menus.destroy'
 Route::get('/menu-edit/{id}', 'MenuController@edit')->name('Menus.edit');
 Route::post('/menu-store', 'MenuController@store')->name('Menus.store');
 Route::patch('/menu-update', 'MenuController@update')->name('Menus.update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
