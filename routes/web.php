@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('client-side.landing-page');
-});
+//Landing Page
+Route::get('/', 'LandingPageController@index')->name('LandingPage');
 
 //Admin Dashboard
 Route::get('/admin', 'DashboardController@login')->name('Admin.auth');

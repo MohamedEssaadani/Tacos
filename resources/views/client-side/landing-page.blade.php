@@ -61,109 +61,25 @@
         </div>
 
         <div class="row">
+            @foreach($tacosItems as $tacos)
             <div class="col-lg-3 col-md-4  col-sm-6 ">
                 <div class="center-text mb-30">
                     <div class="ïmg-200x mlr-auto pos-relative">
                         <h6 class="ribbon-cont">
                             <div class="ribbon primary"></div><b>OFFER</b>
                         </h6>
-                        <img src="images/1589128308.jpeg" alt="">
+                        <img src="{{asset('assets/img/tacos/'.$tacos->image)}}" alt="{{$tacos->image}}">
                     </div>
-                    <h5 class="mt-20">Tacos</h5>
-                    <h4 class="mt-5"><b>$11.90</b></h4>
+                    <h5 class="mt-20">{{$tacos->tacos_name}}</h5>
+                    <h4 class="mt-5"><b>${{$tacos->tacos_price}}</b></h4>
                     <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                 </div>
                 <!--text-center-->
             </div><!-- col-md-3 -->
-
-            <div class="col-lg-3 col-md-4  col-sm-6 ">
-                <div class="center-text mb-30">
-                    <div class="ïmg-200x mlr-auto pos-relative"><img src="images/1589128308.jpeg" alt=""></div>
-                    <h5 class="mt-20">Tacos</h5>
-                    <h4 class="mt-5"><b>$11.90</b></h4>
-                    <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                </div>
-                <!--text-center-->
-            </div><!-- col-md-3 -->
-
-            <div class="col-lg-3 col-md-4  col-sm-6 ">
-                <div class="center-text mb-30">
-                    <div class="ïmg-200x mlr-auto pos-relative"><img src="images/1589128308.jpeg" alt=""></div>
-                    <h5 class="mt-20">Tacos</h5>
-                    <h4 class="mt-5"><b>$11.90</b></h4>
-                    <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                </div>
-                <!--text-center-->
-            </div><!-- col-md-3 -->
-
-            <div class="col-lg-3 col-md-4  col-sm-6 ">
-                <div class="center-text mb-30">
-                    <div class="ïmg-200x mlr-auto pos-relative">
-                        <h6 class="ribbon-cont">
-                            <div class="ribbon secondary"></div><b>SPECIALITY</b>
-                        </h6>
-                        <img src="images/1589128308.jpeg" alt="">
-                    </div>
-                    <h5 class="mt-20">Tacos</h5>
-                    <h4 class="mt-5"><b>$11.90</b></h4>
-                    <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                </div>
-                <!--text-center-->
-            </div><!-- col-md-3 -->
-
-            <div class="col-lg-3 col-md-4  col-sm-6 ">
-                <div class="center-text mb-30">
-                    <div class="ïmg-200x mlr-auto pos-relative"><img src="images/1589128308.jpeg" alt=""></div>
-                    <h5 class="mt-20">Tacos</h5>
-                    <h4 class="mt-5"><b>$11.90</b></h4>
-                    <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                </div>
-                <!--text-center-->
-            </div><!-- col-md-3 -->
-
-            <div class="col-lg-3 col-md-4  col-sm-6 ">
-                <div class="center-text mb-30">
-                    <div class="ïmg-200x mlr-auto pos-relative">
-                        <h6 class="ribbon-cont">
-                            <div class="ribbon primary"></div><b>OFFER</b>
-                        </h6>
-                        <img src="images/1589128308.jpeg" alt="">
-                    </div>
-                    <h5 class="mt-20">Tacos</h5>
-                    <h4 class="mt-5"><b>$11.90</b></h4>
-                    <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                </div>
-                <!--text-center-->
-            </div><!-- col-md-3 -->
-
-            <div class="col-lg-3 col-md-4  col-sm-6 ">
-                <div class="center-text mb-30">
-                    <div class="ïmg-200x mlr-auto pos-relative">
-                        <h6 class="ribbon-cont color-black">
-                            <div class="ribbon white"></div><b>PLUS SIZE</b>
-                        </h6>
-                        <img src="images/1589128308.jpeg" alt="">
-                    </div>
-                    <h5 class="mt-20">Tacos</h5>
-                    <h4 class="mt-5"><b>$11.90</b></h4>
-                    <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                </div>
-                <!--text-center-->
-            </div><!-- col-md-3 -->
-
-            <div class="col-lg-3 col-md-4  col-sm-6 ">
-                <div class="center-text mb-30">
-                    <div class="ïmg-200x mlr-auto pos-relative"><img src="images/1589128308.jpeg" alt=""></div>
-                    <h5 class="mt-20">Tacos</h5>
-                    <h4 class="mt-5"><b>$11.90</b></h4>
-                    <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                </div>
-                <!--text-center-->
-            </div><!-- col-md-3 -->
+            @endforeach
         </div><!-- row -->
 
-        <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS
-                    MENU</b></a></h6>
+        <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE ALL</b></a></h6>
     </div><!-- container -->
 </section>
 
@@ -178,8 +94,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <ul class="selecton brdr-b-primary mb-70">
-                    <li><a class="active" href="#" data-select="*"><b>ALL</b></a></li>
-                    <li><a href="#" data-select="tacos"><b>Tacos</b></a></li>
+                    <li><a class="active" href="#" data-select="tacos"><b>Tacos</b></a></li>
                     <li><a href="#" data-select="menu"><b>Menu</b></a></li>
                     <li><a href="#" data-select="drink"><b>Drink</b></a></li>
                 </ul>
