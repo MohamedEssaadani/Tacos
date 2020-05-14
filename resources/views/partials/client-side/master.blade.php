@@ -23,7 +23,7 @@
 
     <header>
         <div class="container">
-            <a class="logo" href="#"><img src="images/logo-white.png" alt="Logo"></a>
+            <a class="logo" href="#"><img src="" alt="Logo"></a>
 
             <!--  <div class="right-area">
                         <h6><a class="plr-20 color-white btn-fill-primary" href="#">ORDER: +34 685 778 8892</a></h6>
@@ -348,7 +348,7 @@
     <footer class="pb-50  pt-70 pos-relative">
         <div class="pos-top triangle-bottom"></div>
         <div class="container-fluid">
-            <a href="index.html"><img src="images/logo-white.png" alt="Logo"></a>
+            <a href="index.html"><img src="" alt="Logo"></a>
 
             <div class="pt-30">
                 <p class="underline-secondary"><b>Address:</b></p>
