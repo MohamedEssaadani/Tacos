@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Menu;
 use App\Tacos;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,11 @@ class LandingPageController extends Controller
     public function index()
     {
         $tacosItems = Tacos::inRandomOrder(8)->get();
+        $menus = Menu::inRandomOrder(8)->get();
 
         return view('client-side.landing-page', [
-            'tacosItems' => $tacosItems
+            'tacosItems' => $tacosItems,
+            'menus' => $menus
         ]);
     }
 }
