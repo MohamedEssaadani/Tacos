@@ -1453,18 +1453,19 @@ section {
 }
 
 .bg-1 {
-    background: url(../images/slider_1_1920_1200.jpg) no-repeat center;
+    background: url(../images/.jpg) no-repeat center;
     background-size: cover;
 }
 
-.bg-2 {
+
+/* .bg-2 {
     background: url(../images/story_bg_1.png) no-repeat center;
     background-size: 100%;
 }
 
 .bg-3 {
-    background: url(../assets/img/tacos/1589128308.jpeg)
-}
+    background: url(../images/1589128308.jpeg)
+} */
 
 
 }
