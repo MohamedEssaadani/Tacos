@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('partials.client-side.master');
+    return view('client-side.landing-page');
 });
 
 //Admin Dashboard
