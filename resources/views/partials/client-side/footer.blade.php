@@ -1,7 +1,7 @@
 <footer class="pb-50  pt-70 pos-relative">
     <div class="pos-top triangle-bottom"></div>
     <div class="container-fluid">
-        <a href="index.html"><img src="" alt="Logo"></a>
+        <a href="index.html"><img src="images/tacos-logo.png" style="height:220px; width:220px;" alt="Logo"></a>
 
         <div class="pt-30">
             <p class="underline-secondary"><b>Address:</b></p>
