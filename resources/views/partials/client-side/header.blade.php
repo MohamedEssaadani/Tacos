@@ -2,9 +2,11 @@
     <div class="container">
         <a class="logo" href="#"><img src="images/tacos-logo.png" alt="Logo"></a>
 
-        <!--  <div class="right-area">
-                        <h6><a class="plr-20 color-white btn-fill-primary" href="#">ORDER: +34 685 778 8892</a></h6>
-                </div> -->
+        <div class="right-area">
+            <h6 style="float:left;"><a class="plr-20 color-white btn-fill-primary" href="#">Login</a></h6>
+            <h6 style="float:right;"><a class="plr-20 color-white btn-fill-primary" style="margin-left:10px;"
+                    href="#">Sign Up</a></h6>
+        </div>
         <!-- right-area -->
 
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>

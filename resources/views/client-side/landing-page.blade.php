@@ -123,8 +123,8 @@
             @endforeach
         </div><!-- row -->
 
-        <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS
-                    MENU</b></a></h6>
+        <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE ALL
+                    MENUS</b></a></h6>
     </div><!-- container -->
 </section>
 @endsection
