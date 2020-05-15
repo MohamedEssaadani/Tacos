@@ -2675,6 +2675,7 @@ ul.selecton li a.active {
 }
 
 .tp_widgets .list li {
+    display: block!important;
     margin-bottom: 12px;
 }
 

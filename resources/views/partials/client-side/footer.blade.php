@@ -4,19 +4,16 @@
         <div class="row">
             <div class="col-lg-2  col-md-6 col-sm-6">
                 <div class="single-footer-widget tp_widgets">
-                    <h6 class="footer_title">Top Products</h6>
+                    <h6 class="footer_title">Main Menu</h6>
                     <ul class="list">
                         <li>
-                            <a href="#">Managed Website</a>
+                            <a href="#">Home </a>
                         </li>
                         <li>
-                            <a href="#">Manage Reputation</a>
+                            <a href="#">Tacos</a>
                         </li>
                         <li>
-                            <a href="#">Power Tools</a>
-                        </li>
-                        <li>
-                            <a href="#">Marketing Service</a>
+                            <a href="#">Menus</a>
                         </li>
                     </ul>
                 </div>
@@ -26,58 +23,31 @@
                     <h6 class="footer_title">Quick Links</h6>
                     <ul class="list">
                         <li>
-                            <a href="#">Jobs</a>
+                            <a href="#">About us</a>
                         </li>
                         <li>
-                            <a href="#">Brand Assets</a>
-                        </li>
-                        <li>
-                            <a href="#">Investor Relations</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Service</a>
+                            <a href="#">Contact us</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-2  col-md-6 col-sm-6">
                 <div class="single-footer-widget tp_widgets">
-                    <h6 class="footer_title">Features</h6>
+                    <h6 class="footer_title">Offers</h6>
                     <ul class="list">
                         <li>
-                            <a href="#">Jobs</a>
+                            <a href="#">First one</a>
                         </li>
                         <li>
-                            <a href="#">Brand Assets</a>
+                            <a href="#">Second one</a>
                         </li>
                         <li>
-                            <a href="#">Investor Relations</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Service</a>
+                            <a href="#">Third one</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-2  col-md-6 col-sm-6">
-                <div class="single-footer-widget tp_widgets">
-                    <h6 class="footer_title">Resources</h6>
-                    <ul class="list">
-                        <li>
-                            <a href="#">Guides</a>
-                        </li>
-                        <li>
-                            <a href="#">Research</a>
-                        </li>
-                        <li>
-                            <a href="#">Experts</a>
-                        </li>
-                        <li>
-                            <a href="#">Agencies</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <aside class="f_widget news_widget">
                     <div class="f_title">
