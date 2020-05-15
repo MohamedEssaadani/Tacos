@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Landing Page
-Route::get('/', 'LandingPageController@index')->name('LandingPage');
-
+//Admin Side Routes
 //Admin Dashboard
 Route::get('/admin', 'DashboardController@login')->name('Admin.auth');
 
@@ -52,6 +50,16 @@ Route::get('/menu-edit/{id}', 'MenuController@edit')->name('Menus.edit');
 Route::post('/menu-store', 'MenuController@store')->name('Menus.store');
 Route::patch('/menu-update', 'MenuController@update')->name('Menus.update');
 
+//Auth routes
 Auth::routes();
+
+
+//Client Side Routes
+//Landing Page
+Route::get('/', 'LandingPageController@index')->name('LandingPage');
+
+//Tacos items
+Route::get('/tacos-menu', 'TacosMenuController@index')->name('TacosMenu.index');
+
 
 Route::get('/home', 'HomeController@index')->name('home');

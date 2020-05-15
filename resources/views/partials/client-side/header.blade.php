@@ -38,8 +38,8 @@
 
         <ul class="main-menu font-mountainsre" id="main-menu">
             <li><a href="{{route('LandingPage')}}">HOME</a></li>
-            <li><a href="">TACOS</a></li>
-            <li><a href="">MENU</a></li>
+            <li><a href="{{route('TacosMenu.index')}}">TACOS</a></li>
+            <li><a href="">MENUS</a></li>
             <li><a href="">ABOUT US</a></li>
             <li><a href="">CONTACT</a></li>
             <li><a href="">Cart <i class="fa fa-shopping-cart"></i></a></li>
