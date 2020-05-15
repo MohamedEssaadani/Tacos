@@ -79,7 +79,8 @@
             @endforeach
         </div><!-- row -->
 
-        <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE ALL</b></a></h6>
+        <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="{{route('TacosMenu.index')}}"
+                class="btn-primaryc plr-25"><b>SEE ALL</b></a></h6>
     </div><!-- container -->
 </section>
 
