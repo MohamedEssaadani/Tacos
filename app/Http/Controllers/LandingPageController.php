@@ -15,8 +15,8 @@ class LandingPageController extends Controller
      */
     public function index()
     {
-        $tacosItems = Tacos::inRandomOrder(8)->get();
-        $menus = Menu::inRandomOrder(8)->get();
+        $tacosItems = Tacos::all()->random(8);
+        $menus = Menu::all()->random(6);
 
         return view('client-side.landing-page', [
             'tacosItems' => $tacosItems,

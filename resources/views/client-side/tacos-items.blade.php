@@ -23,7 +23,10 @@
                 <!--text-center-->
             </div><!-- col-md-3 -->
             @endforeach
+
+
         </div>
+        {{$tacosItems->links()}}
     </div>
 </section>
 

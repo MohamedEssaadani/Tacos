@@ -14,7 +14,7 @@ class TacosMenuController extends Controller
      */
     public function index()
     {
-        $tacosItems = Tacos::paginate(12);
+        $tacosItems = Tacos::paginate(8);
 
         return view('client-side.tacos-items', [
             'tacosItems' => $tacosItems
