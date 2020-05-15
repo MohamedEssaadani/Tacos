@@ -1,5 +1,9 @@
 @extends('partials.client-side.master')
 
+@section('extra-css')
+
+@endsection
+
 @section('content')
 
 @include('partials.client-side.header-2')
@@ -24,9 +28,12 @@
             </div><!-- col-md-3 -->
             @endforeach
 
-
         </div>
-        {{$tacosItems->links()}}
+        <div class="d-flex">
+            <div class="mx-auto">
+                {{$tacosItems->links("pagination::bootstrap-4")}}
+            </div>
+        </div>
     </div>
 </section>
 
