@@ -70,7 +70,7 @@
                         </h6>
                         <img src="{{asset('assets/img/tacos/'.$tacos->image)}}" alt="{{$tacos->image}}">
                     </div>
-                    <h5 class="mt-20">{{$tacos->tacos_name}}</h5>
+                    <h5 class="">{{$tacos->tacos_name}}</h5>
                     <h4 class="mt-5"><b>${{$tacos->tacos_price}}</b></h4>
                     <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                 </div>
