@@ -41,7 +41,7 @@
             <li><a href="">MENUS</a></li>
             <li><a href="">ABOUT US</a></li>
             <li><a href="">CONTACT</a></li>
-            <li><a href="">Cart <i class="fa fa-shopping-cart"></i></a></li>
+            <li><a href="{{route('Cart')}}">Cart <i class="fa fa-shopping-cart"></i></a></li>
         </ul>
 
         <div class="clearfix"></div>

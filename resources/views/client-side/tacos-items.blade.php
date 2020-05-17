@@ -1,8 +1,5 @@
 @extends('partials.client-side.master')
 
-@section('extra-css')
-
-@endsection
 
 @section('content')
 
