@@ -33,7 +33,6 @@
         @endguest
 
 
-
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
 
         <ul class="main-menu font-mountainsre" id="main-menu">

@@ -86,4 +86,18 @@ class TacosMenuController extends Controller
     {
         //
     }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'query' => 'required|min:3'
+        ]);
+
+        $query = $request->query;
+
+        $result = Tacos::where('tacos_name', 'like', "%$query%")
+            ->paginate(8);
+
+        return view('client-side.tacos-items')->with('tacosItems', $result);
+    }
 }

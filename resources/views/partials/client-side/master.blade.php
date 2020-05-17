@@ -33,6 +33,7 @@
     <script src="plugin-frameworks/swiper.js"></script>
     <script src="common/scripts.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 
 </html>
