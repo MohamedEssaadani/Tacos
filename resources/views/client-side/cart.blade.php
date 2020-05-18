@@ -23,7 +23,7 @@
                     <td><img src="{{asset('assets/img/tacos/'.$details['tacos']->image)}}"
                             alt="{{$details['tacos']->image}}" style="height:120px; width:120px;"></td>
                     <td style="color:red; font-size:20px; cursor: pointer;">
-                        &times;
+                        <a href="{{route('Cart.remove', $id)}}">&times;</a>
                     </td>
                 </tr>
                 @endforeach

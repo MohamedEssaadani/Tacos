@@ -72,7 +72,8 @@
                     </div>
                     <h5 class="">{{$tacos->tacos_name}}</h5>
                     <h4 class="mt-5"><b>${{$tacos->tacos_price}}</b></h4>
-                    <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
+                    <h6 class="mt-20"><a href="{{route('Tacos.addToCart', $tacos->tacos_id)}}"
+                            class="btn-brdr-primary plr-25"><b>Add To Cart</b></a></h6>
                 </div>
                 <!--text-center-->
             </div><!-- col-md-3 -->

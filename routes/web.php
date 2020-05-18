@@ -61,9 +61,11 @@ Route::get('/', 'LandingPageController@index')->name('LandingPage');
 //Tacos items
 Route::get('/tacos-menu', 'TacosMenuController@index')->name('TacosMenu.index');
 Route::get('/tacos-search', 'TacosMenuController@search')->name('TacosMenu.search');
+
+//Cart
 Route::get('/addToCart/{id}', 'CartController@store')->name('Tacos.addToCart');
 Route::get('/cart', 'CartController@index')->name('Cart');
-
+Route::get('/cart/{id}', 'CartController@remove')->name('Cart.remove');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
