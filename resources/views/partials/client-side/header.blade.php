@@ -1,13 +1,26 @@
+<style>
+    .search {
+        float: left;
+        margin-right: 20px;
+        width: 250px;
+        margin-top: 7px;
+    }
+
+</style>
 <header>
     <div class="container">
         <a class="logo" href="#"><img src="images/tacos-logo.png" alt="Logo"></a>
 
         @guest
         <div class="right-area">
-            <h6 style="float:left;"><a class="plr-20 color-white btn-fill-primary" href="{{route('login')}}">Login</a>
-            </h6>
-            <h6 style="float:right;"><a class="plr-20 color-white btn-fill-primary" style="margin-left:10px;"
-                    href="{{route('register')}}">Sign Up</a></h6>
+            <input type="text" class="form-control search" placeholder="Search Tacos">
+            <div style="float:right;">
+                <h6 style="float:left;"><a class="plr-20 color-white btn-fill-primary"
+                        href="{{route('login')}}">Login</a>
+                </h6>
+                <h6 style="float:right;"><a class="plr-20 color-white btn-fill-primary" style="margin-left:10px;"
+                        href="{{route('register')}}">Sign Up</a></h6>
+            </div>
         </div>
         <!-- right-area -->
         @else
