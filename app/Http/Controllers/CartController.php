@@ -53,7 +53,7 @@ class CartController extends Controller
 
         session()->put('cart', $cart);
 
-        return redirect()->back()->with('success', 'Tacos added to cart successfully. <a href="#">View Cart</a>');
+        return redirect()->back()->with('success', 'Tacos added to cart successfully. <a href="/cart">View Cart</a>');
     }
 
     public function remove($id)

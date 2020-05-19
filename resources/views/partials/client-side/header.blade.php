@@ -13,7 +13,9 @@
 
         @guest
         <div class="right-area">
-            <input type="text" class="form-control search" placeholder="Search Tacos">
+            <form action="{{route('TacosMenu.search')}}" method="GET" class="search">
+                <input type="text" class="form-control" name="query" placeholder="Search Tacos">
+            </form>
             <div style="float:right;">
                 <h6 style="float:left;"><a class="plr-20 color-white btn-fill-primary"
                         href="{{route('login')}}">Login</a>

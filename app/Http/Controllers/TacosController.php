@@ -12,7 +12,7 @@ class TacosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($query)
     {
         $page_title = "Tacos";
 

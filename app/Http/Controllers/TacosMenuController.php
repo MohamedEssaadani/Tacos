@@ -93,7 +93,7 @@ class TacosMenuController extends Controller
             'query' => 'required|min:3'
         ]);
 
-        $query = $request->query;
+        $query = $request->get('query');
 
         $result = Tacos::where('tacos_name', 'like', "%$query%")
             ->paginate(8);

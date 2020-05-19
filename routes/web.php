@@ -60,7 +60,7 @@ Route::get('/', 'LandingPageController@index')->name('LandingPage');
 
 //Tacos items
 Route::get('/tacos-menu', 'TacosMenuController@index')->name('TacosMenu.index');
-Route::get('/tacos-search', 'TacosMenuController@search')->name('TacosMenu.search');
+Route::get('/search', 'TacosMenuController@search')->name('TacosMenu.search');
 
 //Cart
 Route::get('/addToCart/{id}', 'CartController@store')->name('Tacos.addToCart');
