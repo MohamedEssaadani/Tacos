@@ -93,10 +93,9 @@ class TacosMenuController extends Controller
             'query' => 'required|min:3'
         ]);
 
-        $query = $request->get('query');
+        $query = $request->input('query');
 
         $result = Tacos::where('tacos_name', 'like', "%$query%")
-            ->orwhere('tacos_price', 'like', "%$query%")
             ->paginate(8);
 
         return view('client-side.tacos-items')->with('tacosItems', $result);
