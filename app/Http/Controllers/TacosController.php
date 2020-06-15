@@ -15,7 +15,6 @@ class TacosController extends Controller
     public function index($query)
     {
         $page_title = "Tacos";
-
         $tacosList = Tacos::paginate(5);
 
         return view('admin.tacos.browse', [
