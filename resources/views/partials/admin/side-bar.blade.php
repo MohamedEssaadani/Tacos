@@ -52,12 +52,7 @@
                 </div>
 
                 <div class="nav-lavel">Settings</div>
-                <div class="nav-item">
-                    <a href="javascript:void(0)"><i class="ik ik-monitor"></i><span>Documentation</span></a>
-                </div>
-                <div class="nav-item">
-                    <a href="javascript:void(0)"><i class="ik ik-help-circle"></i><span>Submit Issue</span></a>
-                </div>
+
             </nav>
         </div>
     </div>

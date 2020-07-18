@@ -30,6 +30,7 @@
             </tbody>
         </table>
 
+        <button class="btn btn-info" style="float:right;">Checkout</button>
         @else
         <div>
             No Items In Cart!
