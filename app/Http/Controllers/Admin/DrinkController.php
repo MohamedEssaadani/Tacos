@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Drink;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DrinkController extends Controller
 {

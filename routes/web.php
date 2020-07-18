@@ -16,39 +16,39 @@ use Illuminate\Support\Facades\Route;
 
 //Admin Side Routes
 //Admin Dashboard
-Route::get('/admin', 'DashboardController@login')->name('Admin.auth');
+Route::get('/admin', 'Admin\DashboardController@login')->name('Admin.auth');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');
 });
 
 //Tacos
-Route::get('/tacos', 'TacosController@index')->name('Tacos.index');
-Route::get('/create-tacos', 'TacosController@create')->name('Tacos.create');
-Route::get('/tacos-edit/{tacos}', 'TacosController@edit')->name('Tacos.edit');
-Route::get('/tacos-destroy/{tacos}', 'TacosController@destroy')->name('Tacos.destroy');
-Route::get('/tacos/{tacos}', 'TacosController@show')->name('Tacos.read');
-Route::post('/tacos-store', 'TacosController@store')->name('Tacos.store');
-Route::patch('/tacos-update/{tacos}', 'TacosController@update')->name('Tacos.update');
+Route::get('/tacos', 'Admin\TacosController@index')->name('Tacos.index');
+Route::get('/create-tacos', 'Admin\TacosController@create')->name('Tacos.create');
+Route::get('/tacos-edit/{tacos}', 'Admin\TacosController@edit')->name('Tacos.edit');
+Route::get('/tacos-destroy/{tacos}', 'Admin\TacosController@destroy')->name('Tacos.destroy');
+Route::get('/tacos/{tacos}', 'Admin\TacosController@show')->name('Tacos.read');
+Route::post('/tacos-store', 'Admin\TacosController@store')->name('Tacos.store');
+Route::patch('/tacos-update/{tacos}', 'Admin\TacosController@update')->name('Tacos.update');
 
 //Drinks
-Route::get('/drinks', 'DrinkController@index')->name('Drinks.index');
-Route::get('/drinks/{filter}', 'DrinkController@filter')->name('Drinks.index.filter');
-Route::get('/create-drink', 'DrinkController@create')->name('Drinks.create');
-Route::get('/drink-destroy/{drink}', 'DrinkController@destroy')->name('Drinks.destroy');
-Route::get('/drink/{id}', 'DrinkController@show')->name('Drinks.show');
-Route::get('/drink-edit/{id}', 'DrinkController@edit')->name('Drinks.edit');
-Route::post('/drink-store', 'DrinkController@store')->name('Drinks.store');
-Route::patch('/drink-update/{drink}', 'DrinkController@update')->name('Drinks.update');
+Route::get('/drinks', 'Admin\DrinkController@index')->name('Drinks.index');
+Route::get('/drinks/{filter}', 'Admin\DrinkController@filter')->name('Drinks.index.filter');
+Route::get('/create-drink', 'Admin\DrinkController@create')->name('Drinks.create');
+Route::get('/drink-destroy/{drink}', 'Admin\DrinkController@destroy')->name('Drinks.destroy');
+Route::get('/drink/{id}', 'Admin\DrinkController@show')->name('Drinks.show');
+Route::get('/drink-edit/{id}', 'Admin\DrinkController@edit')->name('Drinks.edit');
+Route::post('/drink-store', 'Admin\DrinkController@store')->name('Drinks.store');
+Route::patch('/drink-update/{drink}', 'Admin\DrinkController@update')->name('Drinks.update');
 
 //Menus
-Route::get('/menus', 'MenuController@index')->name('Menus.index');
-Route::get('/menu-create', 'MenuController@create')->name('Menus.create');
-Route::get('/menu/{id}', 'MenuController@show')->name('Menus.show');
-Route::get('/menu-destroy/{id}', 'MenuController@destroy')->name('Menus.destroy');
-Route::get('/menu-edit/{id}', 'MenuController@edit')->name('Menus.edit');
-Route::post('/menu-store', 'MenuController@store')->name('Menus.store');
-Route::patch('/menu-update', 'MenuController@update')->name('Menus.update');
+Route::get('/menus', 'Admin\MenuController@index')->name('Menus.index');
+Route::get('/menu-create', 'Admin\MenuController@create')->name('Menus.create');
+Route::get('/menu/{id}', 'Admin\MenuController@show')->name('Menus.show');
+Route::get('/menu-destroy/{id}', 'Admin\MenuController@destroy')->name('Menus.destroy');
+Route::get('/menu-edit/{id}', 'Admin\MenuController@edit')->name('Menus.edit');
+Route::post('/menu-store', 'Admin\MenuController@store')->name('Menus.store');
+Route::patch('/menu-update', 'Admin\MenuController@update')->name('Menus.update');
 
 //Auth routes
 Auth::routes();
@@ -56,16 +56,16 @@ Auth::routes();
 
 //Client Side Routes
 //Landing Page
-Route::get('/', 'LandingPageController@index')->name('LandingPage');
+Route::get('/', 'ClientSide\LandingPageController@index')->name('LandingPage');
 
 //Tacos items
-Route::get('/tacos-menu', 'TacosMenuController@index')->name('TacosMenu.index');
+Route::get('/tacos-menu', 'ClientSide\TacosMenuController@index')->name('TacosMenu.index');
 Route::get('/search', 'TacosMenuController@search')->name('TacosMenu.search');
 
 //Cart
-Route::get('/addToCart/{id}', 'CartController@store')->name('Tacos.addToCart');
-Route::get('/cart', 'CartController@index')->name('Cart');
-Route::get('/cart/{id}', 'CartController@remove')->name('Cart.remove');
+Route::get('/addToCart/{id}', 'ClientSide\CartController@store')->name('Tacos.addToCart');
+Route::get('/cart', 'ClientSide\CartController@index')->name('Cart');
+Route::get('/cart/{id}', 'ClientSide\CartController@remove')->name('Cart.remove');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
