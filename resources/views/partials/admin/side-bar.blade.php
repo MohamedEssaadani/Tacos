@@ -32,27 +32,9 @@
                 </div>
 
                 <div class="nav-lavel">Charts</div>
-                <div class="nav-item has-sub">
-                    <a href="#"><i class="ik ik-pie-chart"></i><span>Charts</span> <span
-                            class="badge badge-success">New</span></a>
-                    <div class="submenu-content">
-                        <a href="pages/charts-chartist.html" class="menu-item active">Chartist</a>
-                        <a href="pages/charts-flot.html" class="menu-item">Flot</a>
-                        <a href="pages/charts-knob.html" class="menu-item">Knob</a>
-                        <a href="pages/charts-amcharts.html" class="menu-item">Amcharts</a>
-                    </div>
-                </div>
-
-                <div class="nav-lavel">Apps</div>
                 <div class="nav-item">
-                    <a href="pages/calendar.html"><i class="ik ik-calendar"></i><span>Calendar</span></a>
+                    <a href=""><i class="ik ik-zap"></i><span>Charts</span></a>
                 </div>
-                <div class="nav-item">
-                    <a href="pages/taskboard.html"><i class="ik ik-server"></i><span>Taskboard</span></a>
-                </div>
-
-                <div class="nav-lavel">Settings</div>
-
             </nav>
         </div>
     </div>
