@@ -2,7 +2,7 @@
     <div class="sidebar-header">
         <a class="header-brand" href="index.html">
             <div class="logo-img">
-                <img src="{{asset("assets/src/img/brand-white.svg")}}" class="header-brand-img" alt="lavalite">
+                <!--LOGO-->
             </div>
             <span class="text">Tacos</span>
         </a>
