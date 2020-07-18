@@ -69,3 +69,6 @@ Route::get('/cart/{id}', 'ClientSide\CartController@remove')->name('Cart.remove'
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Checkout
+Route::get('/checkout', 'ClientSide\CheckoutController@index')->name('Checkout.index');

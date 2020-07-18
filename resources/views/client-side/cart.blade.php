@@ -30,7 +30,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-info" style="float:right;">Checkout</button>
+        <a class="btn btn-info" href="{{route('Checkout.index')}}" style="float:right;">Checkout</a>
         @else
         <div>
             No Items In Cart!
