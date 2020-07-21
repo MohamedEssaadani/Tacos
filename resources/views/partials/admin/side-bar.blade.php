@@ -20,7 +20,7 @@
                 </div>
                 <div class="nav-item">
                     <a href="{{route('Tacos.index')}}"><i class="ik ik-menu"></i><span>Tacos</span> <span
-                            class="badge badge-success">New</span></a>
+                            class="badge badge-success">33+</span></a>
                 </div>
                 <div class="nav-item">
                     <a href="{{route('Menus.index')}}"><i class="ik ik-layers"></i><span>Menus</span> <span

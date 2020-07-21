@@ -94,6 +94,7 @@ class TacosMenuController extends Controller
             'query' => 'required|min:3'
         ]);
 
+
         $query = $request->input('query');
 
         $result = Tacos::where('tacos_name', 'like', "%$query%")

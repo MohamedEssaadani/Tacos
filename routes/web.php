@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin', 'Admin\DashboardController@login')->name('Admin.auth');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
-    Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');
+    Route::get('/dashboard', 'Admin\DashboardController@index')->name('Dashboard');
 });
 
 //Tacos
