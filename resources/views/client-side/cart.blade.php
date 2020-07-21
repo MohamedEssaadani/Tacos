@@ -18,7 +18,7 @@
                 <tr>
                     <td>{{$id}}</td>
                     <td>{{$details['tacos']->tacos_name}}</td>
-                    <td>{{$details['tacos']->tacos_price}}</td>
+                    <td>${{$details['tacos']->tacos_price}}</td>
                     <td>{{$details['quantity']}}</td>
                     <td><img src="{{asset('assets/img/tacos/'.$details['tacos']->image)}}"
                             alt="{{$details['tacos']->image}}" style="height:120px; width:120px;"></td>
