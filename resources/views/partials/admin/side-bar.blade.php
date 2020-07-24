@@ -30,7 +30,10 @@
                     <a href="{{route('Drinks.index')}}"><i class="ik ik-zap"></i><span>Drinks</span> <span
                             class="badge badge-danger">120+</span></a>
                 </div>
-
+                <div class="nav-item">
+                    <a href="{{route('Orders.index')}}"><i class="ik ik-command"></i><span>Orders</span> <span
+                            class="badge badge-success">23</span></a>
+                </div>
                 <div class="nav-lavel">Charts</div>
                 <div class="nav-item">
                     <a href=""><i class="ik ik-zap"></i><span>Charts</span></a>

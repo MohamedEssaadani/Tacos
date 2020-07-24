@@ -5,6 +5,8 @@ namespace App\Http\Controllers\ClientSide;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Order;
 
 class CheckoutController extends Controller
 {
@@ -36,7 +38,32 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = $request->validate([
+            'billing_name' => 'required|string',
+            'billing_address' => 'required|string',
+            //size 13 for moroccan number ex: +212699994433
+            'billing_phone' => 'required|string|size:13'
+        ]);
+
+        if (Auth::check()) {
+            $data['user_id'] = Auth::id();
+        }
+
+        $cart = session()->get('cart');
+
+        $data['billing_subtotal'] = 0;
+        foreach ($cart as $item) {
+            $data['billing_subtotal'] += $item['tacos']->tacos_price * $item['quantity'];
+        }
+        //0.5% for example
+        $data['billing_tax'] = 1.05;
+        $data['billing_total'] =  $data['billing_subtotal'] * $data['billing_tax'];
+        $data['shipped'] = false;
+
+        Order::create($data);
+
+        return redirect()->to(route('LandingPage'))->with('success', 'Your order have been created, you will get your products between 15minutes and 30minutes :)!');
     }
 
     /**

@@ -33,7 +33,7 @@ class CartController extends Controller
 
             session()->put('cart', $cart);
 
-            return redirect()->back()->with('success', 'Tacos added to cart successfully. <a href="{{Cart.index}}">View Cart</a>');
+            return redirect()->back()->with('success', 'Tacos added to cart successfully. <a href="{{route(' . 'Cart.index' . ')}}">View Cart</a>');
         }
 
         //if the customer already added an item so lets check if this item already there to increase qty
@@ -42,7 +42,7 @@ class CartController extends Controller
 
             session()->put('cart', $cart);
 
-            return redirect()->back()->with('success', 'Tacos added to cart successfully. <a href="#">View Cart</a>');
+            return redirect()->back()->with('success', 'Tacos added to cart successfully. <a href="{{route(' . 'Cart.index' . ')}}">View Cart</a>');
         }
 
         // if tacos not exist in cart then add to cart
@@ -53,7 +53,7 @@ class CartController extends Controller
 
         session()->put('cart', $cart);
 
-        return redirect()->back()->with('success', 'Tacos added to cart successfully. <a href="/cart">View Cart</a>');
+        return redirect()->back()->with('success', 'Tacos added to cart successfully. <a href="{{Cart.index}}">View Cart</a>');
     }
 
     public function remove($id)

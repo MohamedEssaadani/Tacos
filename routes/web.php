@@ -50,6 +50,8 @@ Route::get('/menu-edit/{id}', 'Admin\MenuController@edit')->name('Menus.edit');
 Route::post('/menu-store', 'Admin\MenuController@store')->name('Menus.store');
 Route::patch('/menu-update', 'Admin\MenuController@update')->name('Menus.update');
 
+//Orders
+Route::get('/orders', 'Admin\OrdersController@index')->name('Orders.index');
 //Auth routes
 Auth::routes();
 
@@ -60,11 +62,12 @@ Route::get('/', 'ClientSide\LandingPageController@index')->name('LandingPage');
 
 //Tacos items
 Route::get('/tacos-menu', 'ClientSide\TacosMenuController@index')->name('TacosMenu.index');
-Route::get('/search', 'TacosMenuController@search')->name('TacosMenu.search');
+Route::get('/search', 'ClientSide\TacosMenuController@search')->name('TacosMenu.search');
+
 
 //Cart
 Route::get('/addToCart/{id}', 'ClientSide\CartController@store')->name('Tacos.addToCart');
-Route::get('/cart', 'ClientSide\CartController@index')->name('Cart');
+Route::get('/cart', 'ClientSide\CartController@index')->name('Cart.index');
 Route::get('/cart/{id}', 'ClientSide\CartController@remove')->name('Cart.remove');
 
 
@@ -72,3 +75,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Checkout
 Route::get('/checkout', 'ClientSide\CheckoutController@index')->name('Checkout.index');
+//save order
+Route::post('/checkout', 'ClientSide\CheckoutController@store')->name('Checkout.store');

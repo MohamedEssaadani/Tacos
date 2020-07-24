@@ -33,7 +33,7 @@
 
 <body>
 
-    <div class="wrapper" id="app">
+    <div class="wrapper">
         <!--header here-->
         @include('partials.admin.header')
         <!--header here-->
@@ -43,7 +43,7 @@
             @include('partials.admin.side-bar')
             <!--sidebar here-->
 
-            <div class="main-content">
+            <div class="main-content" id="app">
                 <div class="container-fluid">
                     @if ($errors->any())
                     <div class="alert alert-danger">

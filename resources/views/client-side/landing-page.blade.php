@@ -1,6 +1,7 @@
 @extends('partials.client-side.master')
 
 @section('content')
+
 <section class="bg-1 h-900x main-slider pos-relative">
     <div class="triangle-up pos-bottom"></div>
     <div class="container h-100">
@@ -130,3 +131,4 @@
     </div><!-- container -->
 </section>
 @endsection
+
