@@ -1989,6 +1989,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37746,11 +37755,49 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v("$" + _vm._s(order.billing_subtotal))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v("$" + _vm._s(order.billing_tax))]),
+                    _c("td", [_vm._v(_vm._s(order.billing_tax))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v("$" + _vm._s(order.total))]),
+                    _c("td", [_vm._v("$" + _vm._s(order.billing_total))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(order.shipped))])
+                    _c(
+                      "td",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !order.shipped,
+                            expression: "!order.shipped"
+                          }
+                        ]
+                      },
+                      [
+                        _c("span", { staticClass: "alert alert-danger" }, [
+                          _vm._v("\n                                        No")
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: order.shipped,
+                            expression: "order.shipped"
+                          }
+                        ]
+                      },
+                      [
+                        _c("span", { staticClass: "alert alert-success" }, [
+                          _vm._v(
+                            "\n                                        Yes"
+                          )
+                        ])
+                      ]
+                    )
                   ])
                 }),
                 0

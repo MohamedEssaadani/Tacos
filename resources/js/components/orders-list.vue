@@ -33,9 +33,18 @@
                                         {{ order.billing_phone }}
                                     </td>
                                     <td>${{ order.billing_subtotal }}</td>
-                                    <td>${{ order.billing_tax }}</td>
-                                    <td>${{ order.total }}</td>
-                                    <td>{{ order.shipped }}</td>
+                                    <td>{{ order.billing_tax }}</td>
+                                    <td>${{ order.billing_total }}</td>
+                                    <td v-show="!order.shipped">
+                                        <span class="alert alert-danger">
+                                            No</span
+                                        >
+                                    </td>
+                                    <td v-show="order.shipped">
+                                        <span class="alert alert-success">
+                                            Yes</span
+                                        >
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
